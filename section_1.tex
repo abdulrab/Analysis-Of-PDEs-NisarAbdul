@@ -123,3 +123,106 @@ and the conditions are
     U_{t}(x,0) &= U_{1}(x)
 \end{align*}
 
+And we find the Energy function of Wave Equation.
+So, Total Energy Function is as
+
+\begin{equation}
+    TE(t) = KE(t) + PE(t)
+\end{equation}
+
+where 
+\begin{align*}
+    KE(t) &= \frac{1}{2}mv^2 \\
+    PE(t) &= mgh
+\end{align*}
+
+Now first we compute the kinetic energy of function. that is
+\begin{equation}
+    KE(t) = \frac{1}{2}(\rho) (dx) \left(\frac{\partial U}{\partial t} \right)^2
+\end{equation}
+
+where $\rho$ and $m$ are mass density and unit mass respectively.
+
+The Total Kinetic Energy can be found by integrating the KE over interval $0$ to $\pi$
+\begin{equation}
+    KE(t) = \int_{0}^{\pi}\frac{1}{2}(\rho) \left(\frac{\partial U}{\partial t}\right)^2 dx
+\end{equation}
+
+
+Now taking the time derivative of Total Kinetic Energy, we see
+\begin{equation}
+    \frac{d}{dt}KE(t) = \frac{d}{dt}\int_{0}^{\pi}\frac{1}{2}(\rho) \left(\frac{\partial U}{\partial t}\right)^2 dx
+\end{equation}
+
+Now computing the time derivative of right side of equations, and also we know that derivative and integration are linear operator so they can be swapped, i.e.
+\begin{equation}
+     \frac{d}{dt}KE(t) = \int_{0}^{\pi}\frac{d}{dt} \left( \frac{1}{2}(\rho) \left(\frac{\partial U}{\partial t}\right)^2 \right) dx
+\end{equation}
+Then we have change in Kinetic Energy as,
+\begin{equation}
+     \frac{d}{dt}KE(t) = \rho \int_{0}^{\pi}U_{t} * U_{tt} dx
+\end{equation}
+
+since we know by original wave equation
+\begin{equation}
+     U_{tt} = a^2 U_{xx}
+\end{equation}
+
+so we get our equations as
+
+\begin{equation}
+     \frac{d}{dt}KE(t) = a^2 \rho  \int_{0}^{\pi}U_{t} * U_{xx} dx
+\end{equation}
+
+Now Integrating By Parts we get,
+
+\begin{equation}
+     \int_{0}^{\pi}U_{t} * U_{xx} dx = U_{t}U_{x}\Big|_{0}^{\pi} - \int_{0}^{\pi}U_{tx}U_{x}dx
+\end{equation}
+
+After Evaluating the Integration and Using the Given Conditions we get the Simplified Form as 
+
+\begin{equation}
+     \int_{0}^{\pi}U_{t} * U_{xx} dx =  - \int_{0}^{\pi}U_{tx}U_{x}dx
+\end{equation}
+
+By little Technique we play with integration as 
+\begin{equation}
+     \int_{0}^{\pi}U_{t} * U_{xx} dx =  -\frac{1}{2} \int_{0}^{\pi}\frac{\partial}{\partial t}(U_{x})^2dx
+\end{equation}
+
+Now by Leibniz Rule we take time derivative out of integration as
+\begin{equation}
+     \int_{0}^{\pi}U_{t} * U_{xx} dx =  -\frac{1}{2}\frac{d}{dt} \int_{0}^{\pi}(U_{x})^2dx
+\end{equation}
+
+and Hence we can see the final explicit time derivative of Kinetic Energy as
+\begin{equation}
+     \frac{d}{dt} KE(t) =  -\frac{d}{dt}\left( \frac{a^2 \rho}{2} \int_{0}^{\pi}(U_{x})^2dx \right)
+\end{equation}
+
+Now Defining Potential Energy as 
+\begin{equation}
+     PE(t) = \frac{a^2 \rho}{2}\int_{0}^{\pi}(U_{x})^2dx
+\end{equation}
+
+Reference URL "http://web.math.ucsb.edu/~grigoryan/124A/lecs/lec7.pdf" 
+
+So by Law of Conservation of Energy we know that Time derivative of Total Energy is
+\begin{equation}
+    \frac{d}{dt} TE(t) = 0
+\end{equation}
+
+So the time derivatives of Mr Kinetic Energy and Ms Potential Energy have relation as
+\begin{equation}
+    \frac{d}{dt}KE(t) = - \frac{d}{dt}PE(t)
+\end{equation}
+
+
+
+
+
+
+
+
+
