@@ -1,0 +1,125 @@
+%%%%%%%%%% Computing Energy of Heat equations %%%%%%%%%%
+
+\section{Heat Equation and its Energy}
+ The Heath Equation is as following:
+ \begin{equation}
+     U_t = a{U}_{xx}
+ \end{equation}
+ and conditions are 
+ \begin{align*}
+     U(\pi,0) &= 0\\
+     U(x,0) &= {U}_{0}(x)
+ \end{align*}
+     
+ By Separation of Variable we have the solution of heat equation as
+ \begin{equation}
+     U(x,t) = \sum_{k=1}^{\infty} A_{k}(\sin{kx})e^{(-k^2t)}
+ \end{equation}
+ where
+ \begin{equation}
+     A_k = \frac{2}{\pi} \int_{0}^{\pi} U_{0}(x)(\sin{kx})dx
+ \end{equation}
+  
+  Now we prove Energy for the system is decreasing i.e. System is dissipative.
+ \begin{equation}
+     U_t = a{U}_{xx}
+ \end{equation}
+Now we multiply the  $U(x,t)$ on both sides of Heat Equation.
+\begin{equation}
+     U*U_t = U*(a{U}_{xx})
+\end{equation}
+and Now proceed to integrate it over the interval $[0,\pi]$.
+\begin{equation}
+     \int_{0}^{\pi}(U*U_t - U*(a{U}_{xx}))dx = 0
+\end{equation}
+and now we change the term in which time derivative of U occurs as follows
+
+\begin{equation}
+     \int_{0}^{\pi}(U*U_t)dx = \frac{1}{2} \int_{0}^{\pi}\frac{\partial}{\partial{t}}U^{2}dx
+\end{equation}
+
+and we also know that integration is linear operator so we have
+\begin{equation}
+     \frac{1}{2} \int_{0}^{\pi}\frac{\partial}{\partial{t}}U^{2}dx - \int_{0}^{\pi}U*(a{U}_{xx})dx = 0
+\end{equation}
+
+and now by Liebniz rule we know that 
+
+\begin{equation}
+     \frac{1}{2} \int_{0}^{\pi}\frac{\partial}{\partial{t}}U^{2}dx = \frac{1}{2}\frac{d}{dt} \int_{0}^{\pi}U^{2}dx 
+\end{equation}
+
+and hence we get 
+\begin{equation}
+     \frac{1}{2}\frac{d}{dt} \int_{0}^{\pi}U^{2}dx  - \int_{0}^{\pi}U*(a{U}_{xx})dx = 0
+\end{equation}
+
+Now we integrate the second term i.e. 2nd order partial derivative with respect to $x$, by "Integration by Parts" as follows
+
+\begin{equation}
+     \int_{0}^{\pi}{U{U}_{xx}}dx = U*U_{x} \Big|_{0}^{\pi} - \int_{0}^{\pi}{U_x}{U_x}dx
+\end{equation}
+
+
+\begin{equation}
+     \int_{0}^{\pi}{U{U}_{xx}}dx = U(\pi,t)*U_{x}(\pi,t) - U(0,t)*U_{x}(0,t) - \int_{0}^{\pi}{U_x}^{2}dx
+\end{equation}
+
+since by given conditions we know that 
+
+\begin{align*}
+    U(\pi,t) &= 0 \\
+    U(0,t) &= 0 \\
+\end{align*}
+
+and final expression becomes
+\begin{equation}
+     \int_{0}^{\pi}{U{U}_{xx}}dx = -\int_{0}^{\pi}{U_x}^{2}dx
+\end{equation}
+
+and our main equation is:
+\begin{equation}
+     \frac{1}{2}\frac{d}{dt} \int_{0}^{\pi}U^{2}dx  =-a\int_{0}^{\pi}{U_x}^{2}dx
+\end{equation}
+
+Provided that $a>0$
+\begin{equation}
+     a\int_{0}^{\pi}{U_x}^{2}dx \geq 0
+\end{equation}
+
+Now as we know that Energy function  $E(t)$ is 
+
+\begin{equation}
+     E(t) = \frac{1}{2} \int_{0}^{\pi} U^{2}dx
+\end{equation}
+
+and so 
+
+\begin{equation}
+    \frac{d}{dt}E(t) \leq 0
+\end{equation}
+
+Hence it is proved that the time rate of Energy function is non-increasing so our given system is dissipative system.
+
+Yaaro Yaari .... $=$ Hence Proved
+
+
+
+
+%%%%%%%%%% Computing Energy of wave equations %%%%%%%%%%
+
+\section{Wave Equation and its Energy}
+The Wave Equation is following:
+
+\begin{equation}
+     U_{tt} - a{U}_{xx} = 0
+\end{equation}
+
+and the conditions are 
+\begin{align*}
+    U(0,t) &= 0\\
+    U(\pi,t) &= 0\\
+    U(x,0) &= U_{0}(x)\\
+    U_{t}(x,0) &= U_{1}(x)
+\end{align*}
+
